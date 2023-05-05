@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://csk7nqodxm0ys"]
+
+[ext_resource type="Script" path="res://Scripts/HandArea.gd" id="1_fih54"]
+[ext_resource type="Texture2D" uid="uid://3pgua6v3quwc" path="res://Art/Game/HandArea.png" id="1_jvb2q"]
+
+[sub_resource type="Curve" id="Curve_ual4j"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(1, 1), 2.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_0dfi8"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 8.42424, 0, 0, Vector2(0.510791, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), -7.89772, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_q1gv5"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, -2.0, 0, 1, Vector2(1, -1), -2.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="HandArea" type="Node2D"]
+script = ExtResource("1_fih54")
+curve = SubResource("Curve_ual4j")
+SPREAD = 20.0
+NUM_CARDS = 10
+ycurve = SubResource("Curve_0dfi8")
+rotcurve = SubResource("Curve_q1gv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jvb2q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
